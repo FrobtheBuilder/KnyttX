@@ -38,6 +38,7 @@
     <None Include="Content\Data\Saves\Nifflas &amp; rrc2soft - Tutorial DS 1.ini" />
     <None Include="Content\Data\Saves\Nifflas &amp; rrc2soft - Tutorial DS 3.ini" />
     <None Include="Content\Data\Saves\Nifflas - Tutorial 1.ini" />
+    <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
