@@ -11,6 +11,7 @@ namespace KnyttX
 	public class Entity : SBDGameComponent
 	{
 		public Sprite Sprite { get; set; }
+		public AnimatedSprite AnimatedSprite { get; set;}
 		public Vector2 Position { get; set; }
 		public Rectangle Hitbox { get; set; }
 		public Rectangle PositionedHitbox {
@@ -27,7 +28,11 @@ namespace KnyttX
 
 		public Entity(Game game, Sprite sprite, Vector2 position, Rectangle hitbox, List<Entity> collidesWith) : base(game)
 		{
-			Sprite = sprite;
+			if (sprite != null) {
+				Sprite = sprite;
+				if (sprite is AnimatedSprite)
+					AnimatedSprite = (AnimatedSprite)sprite;
+			}
 			Position = position;
 			Hitbox = hitbox;
 			CollidesWith = collidesWith;
@@ -48,6 +53,9 @@ namespace KnyttX
 
 		public override void Update(GameTime gameTime)
 		{
+			if (Sprite is AnimatedSprite)
+				((AnimatedSprite)Sprite).Update(gameTime);
+
 			List<Entity> toRemove = new List<Entity>();
 			foreach (Entity e in collidingWith) {
 				if (!PositionedHitbox.Intersects(e.PositionedHitbox)) {

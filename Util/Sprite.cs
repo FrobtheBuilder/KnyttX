@@ -36,7 +36,7 @@ namespace KnyttX
 		public Sprite(Texture2D texture, Vector2 origin) : this(texture, origin, 0f)
 		{}
 
-		public void Draw(SpriteBatch sb, Vector2 position)
+		public virtual void Draw(SpriteBatch sb, Vector2 position)
 		{
 			sb.Draw(
 				Texture,

@@ -51,6 +51,9 @@
     <Compile Include="Util\Sprite.cs" />
     <Compile Include="Entity\Entity.cs" />
     <Compile Include="Util\CollideEventArgs.cs" />
+    <Compile Include="Util\AnimatedSprite.cs" />
+    <Compile Include="Util\FrameTimer.cs" />
+    <Compile Include="Entity\Juni.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
